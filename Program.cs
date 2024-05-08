@@ -70,7 +70,7 @@ class Program
         var kataKunci = Console.ReadLine();
 
         string encryptedText = "";
-        for (int i = 0, j = 0; i < rawText.Length - 1; i++)
+        for (int i = 0, j = 0; i < rawText.Length; i++)
         {
             encryptedText += ((char)(rawText[i] ^ (uint)kataKunci[j])).ToString();
 
@@ -110,7 +110,7 @@ class Program
         var kataKunci = Console.ReadLine();
 
         string decryptedText = "";
-        for (int i = 0, j = 0; i < rawText.Length - 1; i++)
+        for (int i = 0, j = 0; i < rawText.Length; i++)
         {
             decryptedText += ((char)(rawText[i] ^ (uint)kataKunci[j])).ToString();
 
@@ -146,6 +146,6 @@ class Program
     {
         using (var fs = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite))
         using (var sw = new StreamWriter(fs, Encoding.ASCII))
-            sw.WriteLine(text);
+            sw.Write(text);
     }
 }
